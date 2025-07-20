@@ -20,6 +20,7 @@ class AISakuraChatbot {
         await this.loadBreweryConfig();
         this.setupEventListeners();
         this.createChatInterface();
+        await this.checkAPIStatus();
         console.log('🌸 AIサクラが起動しました');
     }
 
@@ -42,7 +43,19 @@ class AISakuraChatbot {
                     <img src="ai-sakura-icon.png" alt="AIサクラ" class="sakura-avatar-img">
                 </div>
                 <div class="ai-sakura-info">
-                    <h3>AIサクラ</h3>
+                    <div class="ai-name-container">
+                        <h3>AIサクラ</h3>
+                        <div class="api-status-indicators">
+                            <div class="status-light" id="gptStatus" title="GPT API Status">
+                                <span class="status-dot gpt-dot"></span>
+                                <span class="status-label">GPT</span>
+                            </div>
+                            <div class="status-light" id="deeplStatus" title="DeepL API Status">
+                                <span class="status-dot deepl-dot"></span>
+                                <span class="status-label">DeepL</span>
+                            </div>
+                        </div>
+                    </div>
                     <p class="ai-status" id="aiStatus">吉源酒造場のご案内をいたします</p>
                 </div>
                 <div class="ai-sakura-controls">
@@ -171,10 +184,16 @@ class AISakuraChatbot {
             const response = await this.getAIResponse(message);
             this.hideTypingIndicator();
             this.addMessage('ai', response);
+            
+            // メッセージ送信後にAPI状態を再チェック
+            setTimeout(() => this.checkAPIStatus(), 1000);
         } catch (error) {
             this.hideTypingIndicator();
             this.addMessage('ai', this.getErrorMessage());
             console.error('AI応答エラー:', error);
+            
+            // エラー後もAPI状態を再チェック
+            setTimeout(() => this.checkAPIStatus(), 1000);
         }
     }
 
@@ -520,6 +539,92 @@ class AISakuraChatbot {
         this.apiKey = localStorage.getItem('aiSakura_openai_key');
         this.deepLApiKey = localStorage.getItem('aiSakura_deepl_key');
     }
+
+    // API接続状態をチェック
+    async checkAPIStatus() {
+        console.log('Checking API status...');
+        
+        // GPT API接続テスト
+        const gptStatus = await this.testGPTConnection();
+        this.updateStatusLight('gpt', gptStatus);
+        
+        // DeepL API接続テスト
+        const deeplStatus = await this.testDeepLConnection();
+        this.updateStatusLight('deepl', deeplStatus);
+        
+        // 全体ステータス更新
+        const overallStatus = gptStatus && deeplStatus ? 'フル機能利用可能' : 
+                             gptStatus ? 'GPT機能のみ利用可能' :
+                             deeplStatus ? 'DeepL翻訳のみ利用可能' : 
+                             'API接続エラー - 基本機能のみ';
+        
+        document.getElementById('aiStatus').textContent = overallStatus;
+    }
+
+    // GPT API接続テスト
+    async testGPTConnection() {
+        try {
+            const response = await fetch('/.netlify/functions/openai-chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    message: 'test',
+                    systemPrompt: 'You are a test assistant. Respond with just "OK".'
+                })
+            });
+
+            const data = await response.json();
+            console.log('GPT API test result:', data.success);
+            return data.success === true;
+        } catch (error) {
+            console.error('GPT API test failed:', error);
+            return false;
+        }
+    }
+
+    // DeepL API接続テスト
+    async testDeepLConnection() {
+        try {
+            const response = await fetch('/.netlify/functions/deepl-translate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    text: 'test',
+                    targetLanguage: 'en',
+                    sourceLanguage: 'ja'
+                })
+            });
+
+            const data = await response.json();
+            console.log('DeepL API test result:', data.success);
+            return data.success === true;
+        } catch (error) {
+            console.error('DeepL API test failed:', error);
+            return false;
+        }
+    }
+
+    // ステータスライト更新
+    updateStatusLight(apiType, isConnected) {
+        const statusElement = document.getElementById(`${apiType}Status`);
+        const dotElement = statusElement.querySelector('.status-dot');
+        
+        if (isConnected) {
+            dotElement.classList.remove('disconnected');
+            dotElement.classList.add('connected');
+        } else {
+            dotElement.classList.remove('connected');
+            dotElement.classList.add('disconnected');
+        }
+        
+        // ツールチップ更新
+        const statusText = isConnected ? 'Connected' : 'Disconnected';
+        statusElement.title = `${apiType.toUpperCase()} API: ${statusText}`;
+    }
 }
 
 // グローバルインスタンスを作成
@@ -528,4 +633,11 @@ window.aiSakura = new AISakuraChatbot();
 // ページ読み込み完了後に初期化
 document.addEventListener('DOMContentLoaded', () => {
     window.aiSakura.loadAPIKeys();
+    
+    // 定期的にAPI状態をチェック（5分間隔）
+    setInterval(() => {
+        if (window.aiSakura) {
+            window.aiSakura.checkAPIStatus();
+        }
+    }, 300000); // 5分 = 300,000ms
 });
