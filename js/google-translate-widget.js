@@ -5,6 +5,7 @@
 
 // Google翻訳要素の初期化
 function googleTranslateElementInit() {
+    // メインのGoogle翻訳要素（隠し）
     new google.translate.TranslateElement({
         pageLanguage: 'ja',
         includedLanguages: 'ja,en,zh-CN,ko,vi,fr',
@@ -12,6 +13,15 @@ function googleTranslateElementInit() {
         autoDisplay: false,
         multilanguagePage: true
     }, 'google_translate_element');
+    
+    // ヘッダー用のGoogle翻訳要素
+    new google.translate.TranslateElement({
+        pageLanguage: 'ja',
+        includedLanguages: 'ja,en,zh-CN,ko',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false,
+        multilanguagePage: true
+    }, 'google_translate_element_header');
     
     // スタイリングのカスタマイズ
     setTimeout(() => {

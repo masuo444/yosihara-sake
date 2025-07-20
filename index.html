@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/google-translate.css">
     <link rel="stylesheet" href="css/ai-sakura-chatbot.css">
     <link rel="stylesheet" href="css/mobile-responsive.css">
+    <link rel="stylesheet" href="css/header-mobile-style.css">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="ai-sakura-icon.png">
@@ -41,8 +42,11 @@
     <!-- ヘッダー -->
     <header class="header">
         <div class="header-content">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
             <a href="#" class="logo">吉源酒造場</a>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" style="display: none;">☰</button>
+            <div class="header-translate-container">
+                <div id="google_translate_element_header"></div>
+            </div>
             <nav class="nav" id="mainNav">
                 <a href="#about" class="nav-link">蔵元について</a>
                 <a href="#products" class="nav-link">商品一覧</a>
@@ -321,6 +325,13 @@
         }
         mediaQuery.addListener(handleMediaQuery);
         handleMediaQuery(mediaQuery);
+        
+        // モバイル用のタッチイベント最適化
+        if (window.innerWidth <= 768) {
+            // パッシブリスナーでスクロール性能向上
+            document.addEventListener('touchstart', function(){}, {passive: true});
+            document.addEventListener('touchmove', function(){}, {passive: true});
+        }
     </script>
 </body>
 </html>

@@ -46,12 +46,6 @@ class AISakuraChatbot {
                     <p class="ai-status" id="aiStatus">吉源酒造場のご案内をいたします</p>
                 </div>
                 <div class="ai-sakura-controls">
-                    <select id="languageSelect" class="language-selector">
-                        <option value="ja">🇯🇵 日本語</option>
-                        <option value="en">🇺🇸 English</option>
-                        <option value="ko">🇰🇷 한국어</option>
-                        <option value="zh">🇨🇳 中文</option>
-                    </select>
                     <button class="chatbot-close" onclick="toggleChatbot()">×</button>
                 </div>
             </div>
@@ -85,9 +79,6 @@ class AISakuraChatbot {
                     </button>
                     <button class="quick-action-btn" onclick="aiSakura.sendQuickMessage('歴史について詳しく')">
                         📚 酒造の歴史
-                    </button>
-                    <button class="quick-action-btn" onclick="aiSakura.sendQuickMessage('アクセス方法は？')">
-                        📍 アクセス
                     </button>
                 </div>
             </div>
@@ -133,13 +124,7 @@ class AISakuraChatbot {
     }
 
     setupLanguageSelector() {
-        const languageSelect = document.getElementById('languageSelect');
-        if (languageSelect) {
-            languageSelect.addEventListener('change', (e) => {
-                this.currentLanguage = e.target.value;
-                this.updateInterfaceLanguage();
-            });
-        }
+        // 言語選択機能を削除（Google翻訳を使用するため）
     }
 
     async updateInterfaceLanguage() {
