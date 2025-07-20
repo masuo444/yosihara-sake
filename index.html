@@ -45,10 +45,31 @@
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
             <a href="#" class="logo">吉源酒造場</a>
             <div class="header-translate-container">
-                <button id="englishTranslateBtn" class="english-translate-btn" onclick="toggleEnglishTranslation()">
-                    <span class="flag-icon">🇺🇸</span>
-                    <span class="lang-text">EN</span>
-                </button>
+                <div class="translate-dropdown">
+                    <button class="translate-btn" onclick="toggleTranslateDropdown()">
+                        <span class="current-lang-flag">🇯🇵</span>
+                        <span class="current-lang-text">日本語</span>
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="translate-options" id="translateOptions" style="display: none;">
+                        <div class="translate-option" onclick="translateToLanguage('ja')">
+                            <span class="flag">🇯🇵</span>
+                            <span class="lang-name">日本語</span>
+                        </div>
+                        <div class="translate-option" onclick="translateToLanguage('en')">
+                            <span class="flag">🇺🇸</span>
+                            <span class="lang-name">English</span>
+                        </div>
+                        <div class="translate-option" onclick="translateToLanguage('ko')">
+                            <span class="flag">🇰🇷</span>
+                            <span class="lang-name">한국어</span>
+                        </div>
+                        <div class="translate-option" onclick="translateToLanguage('zh')">
+                            <span class="flag">🇨🇳</span>
+                            <span class="lang-name">中文</span>
+                        </div>
+                    </div>
+                </div>
             </div>
             <nav class="nav" id="mainNav">
                 <a href="#about" class="nav-link">蔵元について</a>
@@ -260,7 +281,7 @@
     
     <!-- Scripts -->
     <script src="js/main.js"></script>
-    <script src="js/iframe-translate.js"></script>
+    <script src="js/google-translate-api.js"></script>
     <script src="js/ai-sakura-chatbot.js"></script>
     <script>
         // スクロールアニメーション
