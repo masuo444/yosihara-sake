@@ -19,16 +19,27 @@
 }
 
 /* Google翻訳ウィジェットのスタイル調整 */
+#google_translate_element_header {
+  display: block !important;
+  visibility: visible !important;
+}
+
 #google_translate_element_header .goog-te-gadget {
   font-size: 0;
+  line-height: normal;
 }
 
 #google_translate_element_header .goog-te-gadget-simple {
-  background-color: transparent;
+  background-color: white;
   border: 1px solid var(--primary-color);
   border-radius: 4px;
   padding: 4px 8px;
   font-size: 12px;
+  color: var(--primary-color);
+  font-family: arial, sans-serif;
+}
+
+#google_translate_element_header .goog-te-gadget-simple .goog-te-menu-value {
   color: var(--primary-color);
 }
 
@@ -38,6 +49,15 @@
 
 #google_translate_element_header .goog-te-gadget-icon {
   display: none;
+}
+
+/* Google翻訳の強制表示 */
+.goog-te-gadget {
+  display: inline-block !important;
+}
+
+.goog-te-gadget-simple {
+  display: inline-block !important;
 }
 
 /* モバイル対応 */

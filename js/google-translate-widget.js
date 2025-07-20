@@ -15,13 +15,15 @@ function googleTranslateElementInit() {
     }, 'google_translate_element');
     
     // ヘッダー用のGoogle翻訳要素
-    new google.translate.TranslateElement({
-        pageLanguage: 'ja',
-        includedLanguages: 'ja,en,zh-CN,ko',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false,
-        multilanguagePage: true
-    }, 'google_translate_element_header');
+    setTimeout(() => {
+        new google.translate.TranslateElement({
+            pageLanguage: 'ja',
+            includedLanguages: 'ja,en,zh-CN,ko',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false,
+            multilanguagePage: true
+        }, 'google_translate_element_header');
+    }, 500);
     
     // スタイリングのカスタマイズ
     setTimeout(() => {

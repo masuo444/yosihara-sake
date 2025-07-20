@@ -1,4 +1,4 @@
-const { Configuration, OpenAIApi } = require('openai');
+const OpenAI = require('openai');
 
 exports.handler = async (event, context) => {
   // CORS設定
@@ -39,13 +39,12 @@ exports.handler = async (event, context) => {
     }
 
     // OpenAI API設定
-    const configuration = new Configuration({
+    const openai = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
     });
-    const openai = new OpenAIApi(configuration);
 
     // OpenAI APIリクエスト
-    const completion = await openai.createChatCompletion({
+    const completion = await openai.chat.completions.create({
       model: 'gpt-4',
       messages: [
         {
@@ -89,7 +88,7 @@ exports.handler = async (event, context) => {
       temperature: 0.7,
     });
 
-    const response = completion.data.choices[0]?.message?.content;
+    const response = completion.choices[0]?.message?.content;
 
     if (!response) {
       throw new Error('No response from OpenAI');
@@ -101,7 +100,7 @@ exports.handler = async (event, context) => {
       body: JSON.stringify({
         success: true,
         message: response,
-        usage: completion.data.usage
+        usage: completion.usage
       }),
     };
 
