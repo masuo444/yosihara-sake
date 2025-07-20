@@ -5,6 +5,8 @@
 
 // Google翻訳要素の初期化
 function googleTranslateElementInit() {
+    console.log('Initializing Google Translate...');
+    
     // メインのGoogle翻訳要素（隠し）
     new google.translate.TranslateElement({
         pageLanguage: 'ja',
@@ -14,21 +16,13 @@ function googleTranslateElementInit() {
         multilanguagePage: true
     }, 'google_translate_element');
     
-    // ヘッダー用のGoogle翻訳要素
-    setTimeout(() => {
-        new google.translate.TranslateElement({
-            pageLanguage: 'ja',
-            includedLanguages: 'ja,en,zh-CN,ko',
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-            autoDisplay: false,
-            multilanguagePage: true
-        }, 'google_translate_element_header');
-    }, 500);
+    console.log('Main Google Translate element created');
     
     // スタイリングのカスタマイズ
     setTimeout(() => {
         customizeGoogleTranslate();
-    }, 1000);
+        console.log('Google Translate customization applied');
+    }, 1500);
 }
 
 // Google翻訳ウィジェットのスタイルカスタマイズ
@@ -144,17 +138,47 @@ function updateLanguageUI(langCode) {
 
 // 英語翻訳ボタンの制御
 window.toggleEnglishTranslation = function() {
+    console.log('English translation button clicked');
     const btn = document.getElementById('englishTranslateBtn');
     const isActive = btn.classList.contains('active');
     
     // Google翻訳の隠されたセレクトボックスを探す
-    const googleSelect = document.querySelector('.goog-te-combo');
+    let googleSelect = document.querySelector('.goog-te-combo');
     
     if (!googleSelect) {
-        // Google翻訳がまだ読み込まれていない場合は少し待つ
-        setTimeout(window.toggleEnglishTranslation, 500);
+        console.log('Google translate not ready, waiting...');
+        // Google翻訳がまだ読み込まれていない場合は初期化を試行
+        if (typeof googleTranslateElementInit === 'function') {
+            googleTranslateElementInit();
+        }
+        
+        // 再試行
+        setTimeout(() => {
+            googleSelect = document.querySelector('.goog-te-combo');
+            if (googleSelect) {
+                executeTranslation(googleSelect, btn, isActive);
+            } else {
+                console.error('Google Translate failed to initialize');
+                // フォールバック: 直接Google翻訳URLにリダイレクト
+                const currentUrl = window.location.href;
+                if (isActive) {
+                    // 元のURLに戻す
+                    window.location.href = currentUrl.split('#googtrans')[0];
+                } else {
+                    // 英語翻訳URLにリダイレクト
+                    window.location.href = currentUrl + '#googtrans(ja|en)';
+                    window.location.reload();
+                }
+            }
+        }, 1000);
         return;
     }
+    
+    executeTranslation(googleSelect, btn, isActive);
+};
+
+function executeTranslation(googleSelect, btn, isActive) {
+    console.log('Executing translation, isActive:', isActive);
     
     if (isActive) {
         // 日本語（元の言語）に戻す
@@ -162,14 +186,16 @@ window.toggleEnglishTranslation = function() {
         googleSelect.dispatchEvent(new Event('change'));
         btn.classList.remove('active');
         btn.innerHTML = '<span class="flag-icon">🇺🇸</span><span class="lang-text">EN</span>';
+        console.log('Switching to Japanese');
     } else {
         // 英語に翻訳
         googleSelect.value = 'en';
         googleSelect.dispatchEvent(new Event('change'));
         btn.classList.add('active');
         btn.innerHTML = '<span class="flag-icon">🇯🇵</span><span class="lang-text">JA</span>';
+        console.log('Switching to English');
     }
-};
+}
 
 // 既存のtoggleLanguageMenu機能を維持
 window.googleTranslate = window.googleTranslate || {};
