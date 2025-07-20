@@ -1,0 +1,752 @@
+/* Enhanced Sake Lineup Styles */
+/* オシャレな日本酒ラインナップ専用スタイル */
+
+:root {
+    /* ティファニー風カラーパレット */
+    --tiffany-blue: #0ABAB5;
+    --tiffany-light: #A8E6CF;
+    --tiffany-dark: #008B8B;
+    --tiffany-mint: #B8E6B8;
+    --tiffany-cream: #F0F8F0;
+    --tiffany-white: #FFFFFF;
+    --tiffany-pearl: #F5F5DC;
+    --tiffany-silver: #C0C0C0;
+    --tiffany-gold: #FFD700;
+    --tiffany-rose: #FFB6C1;
+    
+    /* カード専用カラー */
+    --card-bg: linear-gradient(135deg, var(--tiffany-white) 0%, var(--tiffany-cream) 100%);
+    --card-shadow: 0 12px 40px rgba(10, 186, 181, 0.15);
+    --card-shadow-hover: 0 20px 60px rgba(10, 186, 181, 0.25);
+    --card-border: 2px solid var(--tiffany-light);
+    
+    /* バッジカラー */
+    --badge-award: linear-gradient(135deg, var(--tiffany-gold), #DAA520);
+    --badge-premium: linear-gradient(135deg, var(--tiffany-blue), var(--tiffany-dark));
+    --badge-new: linear-gradient(135deg, var(--tiffany-mint), #90EE90);
+    --badge-limited: linear-gradient(135deg, var(--tiffany-rose), #FFB6C1);
+    --badge-classic: linear-gradient(135deg, var(--tiffany-silver), #A9A9A9);
+    --badge-master: linear-gradient(135deg, var(--tiffany-blue), #4682B4);
+    
+    /* タグカラー */
+    --tag-modern: var(--tiffany-blue);
+    --tag-elegant: var(--tiffany-rose);
+    --tag-fruity: #FFB6C1;
+    --tag-premium: var(--tiffany-gold);
+    --tag-dry: var(--tiffany-silver);
+    --tag-complex: var(--tiffany-mint);
+}
+
+/* Hero Section */
+.lineup-hero {
+    margin-top: var(--header-height);
+    padding: 120px 0;
+    background: linear-gradient(135deg, 
+        var(--tiffany-blue) 0%, 
+        var(--tiffany-light) 50%,
+        var(--tiffany-mint) 100%);
+    color: var(--tiffany-white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.lineup-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="tiffany-pattern" patternUnits="userSpaceOnUse" width="40" height="40"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.15)"/><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="30" cy="30" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23tiffany-pattern)"/></svg>');
+}
+
+.lineup-title {
+    font-size: 3.8rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    font-family: var(--font-accent);
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, var(--tiffany-white) 0%, var(--tiffany-pearl) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.lineup-subtitle {
+    font-size: 1.4rem;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Filter Section */
+.lineup-filter {
+    padding: 60px 0;
+    background: linear-gradient(135deg, var(--tiffany-cream) 0%, var(--tiffany-pearl) 100%);
+    border-bottom: 2px solid var(--tiffany-light);
+}
+
+.filter-wrapper {
+    text-align: center;
+}
+
+.filter-wrapper h3 {
+    font-size: 1.8rem;
+    color: var(--tiffany-dark);
+    margin-bottom: 40px;
+    font-family: var(--font-accent);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 32px;
+    border: 3px solid var(--tiffany-blue);
+    background: var(--tiffany-white);
+    color: var(--tiffany-blue);
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 6px 20px rgba(10, 186, 181, 0.2);
+    letter-spacing: 0.5px;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--tiffany-blue) 0%, var(--tiffany-dark) 100%);
+    color: var(--tiffany-white);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(10, 186, 181, 0.35);
+    border-color: var(--tiffany-dark);
+}
+
+.filter-icon {
+    font-size: 1.3rem;
+}
+
+/* Sake Grid */
+.lineup-grid {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--tiffany-cream) 0%, var(--tiffany-white) 100%);
+}
+
+.sake-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 48px;
+}
+
+/* Enhanced Sake Card */
+.sake-card {
+    background: var(--card-bg);
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    border: var(--card-border);
+    backdrop-filter: blur(20px);
+}
+
+.sake-card:hover {
+    transform: translateY(-16px) scale(1.03);
+    box-shadow: var(--card-shadow-hover);
+    border-color: var(--tiffany-blue);
+}
+
+.sake-card.modern { 
+    background: linear-gradient(135deg, var(--tiffany-white) 0%, var(--tiffany-cream) 100%);
+    border-left: 8px solid var(--tag-modern); 
+}
+.sake-card.elegant { 
+    background: linear-gradient(135deg, var(--tiffany-white) 0%, #FFF5F8 100%);
+    border-left: 8px solid var(--tag-elegant); 
+}
+.sake-card.innovative { 
+    background: linear-gradient(135deg, var(--tiffany-white) 0%, #F0FFFF 100%);
+    border-left: 8px solid var(--tag-modern); 
+}
+.sake-card.premium { 
+    background: linear-gradient(135deg, var(--tiffany-white) 0%, #FFFEF0 100%);
+    border-left: 8px solid var(--tag-premium); 
+}
+.sake-card.unique { 
+    background: linear-gradient(135deg, var(--tiffany-white) 0%, #F8FFF8 100%);
+    border-left: 8px solid var(--tag-complex); 
+}
+.sake-card.classic { 
+    background: linear-gradient(135deg, var(--tiffany-white) 0%, #F8F8F8 100%);
+    border-left: 8px solid var(--tag-dry); 
+}
+
+.sake-card-inner {
+    padding: 0;
+}
+
+.sake-image {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--yodobloom-light) 0%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+.sake-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.sake-card:hover .sake-image img {
+    transform: scale(1.08);
+}
+
+.sake-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.sake-badge.award { background: var(--badge-award); }
+.sake-badge.premium { background: var(--badge-premium); }
+.sake-badge.new { background: var(--badge-new); }
+.sake-badge.limited { background: var(--badge-limited); }
+.sake-badge.classic { background: var(--badge-classic); }
+.sake-badge.master { background: var(--badge-master); }
+
+.sake-rating {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffd700;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+.sake-content {
+    padding: 36px;
+    background: rgba(255, 255, 255, 0.98);
+}
+
+.sake-header {
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid var(--tiffany-light);
+}
+
+.sake-name {
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: var(--tiffany-dark);
+    margin-bottom: 16px;
+    font-family: var(--font-accent);
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.8px;
+}
+
+.sake-type {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--tiffany-blue) 0%, var(--tiffany-dark) 100%);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    box-shadow: 0 6px 16px rgba(10, 186, 181, 0.4);
+}
+
+.sake-description {
+    color: var(--tiffany-dark);
+    line-height: 1.8;
+    margin-bottom: 32px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    background: linear-gradient(135deg, var(--tiffany-cream) 0%, rgba(168, 230, 207, 0.3) 100%);
+    padding: 24px;
+    border-radius: 20px;
+    border-left: 6px solid var(--tiffany-blue);
+    box-shadow: 0 4px 15px rgba(10, 186, 181, 0.1);
+}
+
+.sake-specs {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 28px;
+    padding: 24px;
+    background: linear-gradient(135deg, rgba(10, 186, 181, 0.08) 0%, rgba(168, 230, 207, 0.08) 100%);
+    border-radius: 20px;
+    border: 2px solid var(--tiffany-light);
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+}
+
+.spec-label {
+    font-size: 0.9rem;
+    color: var(--tiffany-dark);
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.spec-value {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--tiffany-dark);
+    background: linear-gradient(135deg, var(--tiffany-blue) 0%, var(--tiffany-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.sake-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.sake-tag {
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+}
+
+.sake-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.sake-tag.modern { background: var(--tag-modern); }
+.sake-tag.elegant { background: var(--tag-elegant); }
+.sake-tag.fruity { background: var(--tag-fruity); }
+.sake-tag.premium { background: var(--tag-premium); }
+.sake-tag.dry { background: var(--tag-dry); }
+.sake-tag.complex { background: var(--tag-complex); }
+.sake-tag.award { background: var(--badge-award); }
+.sake-tag.unique { background: var(--badge-limited); }
+.sake-tag.new { background: var(--badge-new); }
+.sake-tag.limited { background: var(--badge-limited); }
+.sake-tag.traditional { background: var(--badge-classic); }
+.sake-tag.regional { background: var(--osaka-blue); }
+.sake-tag.classic { background: var(--badge-classic); }
+.sake-tag.sharp { background: var(--tag-dry); }
+
+/* Details Toggle Button */
+.details-toggle {
+    width: 100%;
+    padding: 28px 36px;
+    background: linear-gradient(135deg, var(--tiffany-blue) 0%, var(--tiffany-dark) 100%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 800;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.8px;
+}
+
+.details-toggle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transition: left 0.6s;
+}
+
+.details-toggle:hover::before {
+    left: 100%;
+}
+
+.details-toggle:hover {
+    background: linear-gradient(135deg, var(--tiffany-dark) 0%, var(--tiffany-blue) 100%);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(10, 186, 181, 0.5);
+}
+
+.toggle-icon {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1.2rem;
+}
+
+.details-toggle.expanded .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.toggle-text {
+    position: relative;
+    z-index: 1;
+}
+
+/* Sake Details */
+.sake-details {
+    max-height: 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--tiffany-cream) 0%, rgba(168, 230, 207, 0.1) 100%);
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), padding 0.6s ease;
+    border-top: 3px solid var(--tiffany-light);
+}
+
+.sake-details.expanded {
+    max-height: 1200px;
+    padding: 40px;
+}
+
+.details-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 36px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 12px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(10, 186, 181, 0.15);
+    border: 2px solid var(--tiffany-light);
+}
+
+.tab-btn {
+    padding: 16px 28px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: 800;
+    color: var(--tiffany-dark);
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    flex: 1;
+    text-align: center;
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, var(--tiffany-blue) 0%, var(--tiffany-dark) 100%);
+    color: white;
+    box-shadow: 0 6px 16px rgba(10, 186, 181, 0.4);
+    transform: translateY(-3px);
+}
+
+.tab-btn:hover:not(.active) {
+    background: rgba(10, 186, 181, 0.1);
+    color: var(--tiffany-blue);
+}
+
+.details-content {
+    position: relative;
+    background: white;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 6px 25px rgba(10, 186, 181, 0.1);
+    border: 2px solid var(--tiffany-light);
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.6s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content h4 {
+    color: var(--tiffany-dark);
+    margin-bottom: 24px;
+    font-size: 1.5rem;
+    font-family: var(--font-accent);
+    font-weight: 800;
+    border-bottom: 4px solid var(--tiffany-blue);
+    padding-bottom: 12px;
+    display: inline-block;
+}
+
+.tab-content p {
+    color: var(--tiffany-dark);
+    line-height: 1.9;
+    margin-bottom: 18px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.tab-content strong {
+    color: var(--tiffany-dark);
+    font-weight: 800;
+    background: linear-gradient(135deg, rgba(10, 186, 181, 0.15) 0%, rgba(168, 230, 207, 0.15) 100%);
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+/* CTA Section */
+.lineup-cta {
+    padding: 120px 0;
+    background: linear-gradient(135deg, 
+        var(--tiffany-blue) 0%, 
+        var(--tiffany-mint) 50%,
+        var(--tiffany-light) 100%);
+    color: var(--tiffany-white);
+    text-align: center;
+    position: relative;
+}
+
+.lineup-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="tiffany-cta-pattern" patternUnits="userSpaceOnUse" width="50" height="50"><circle cx="25" cy="25" r="3" fill="rgba(255,255,255,0.15)"/><circle cx="12" cy="12" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="38" cy="38" r="1.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23tiffany-cta-pattern)"/></svg>');
+}
+
+.lineup-cta h2 {
+    font-size: 3.5rem;
+    margin-bottom: 24px;
+    font-family: var(--font-accent);
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-weight: 800;
+}
+
+.lineup-cta p {
+    font-size: 1.3rem;
+    margin-bottom: 48px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding: 24px 48px;
+    background: var(--tiffany-white);
+    color: var(--tiffany-blue);
+    text-decoration: none;
+    border-radius: 35px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    transition: all 0.4s ease;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.5px;
+    border: 3px solid var(--tiffany-white);
+}
+
+.cta-button:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    background: var(--tiffany-blue);
+    color: var(--tiffany-white);
+}
+
+.cta-icon {
+    font-size: 1.4rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .sake-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .lineup-title {
+        font-size: 2.5rem;
+    }
+    
+    .sake-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 15px;
+    }
+    
+    .filter-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .filter-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+    
+    .sake-name {
+        font-size: 1.4rem;
+    }
+    
+    .sake-description {
+        font-size: 0.95rem;
+        padding: 16px;
+    }
+    
+    .sake-specs {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 16px;
+    }
+    
+    .details-tabs {
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 6px;
+    }
+    
+    .tab-btn {
+        padding: 12px 16px;
+        font-size: 0.85rem;
+        min-width: 0;
+    }
+    
+    .details-toggle {
+        padding: 20px 24px;
+        font-size: 1rem;
+    }
+    
+    .sake-details.expanded {
+        padding: 24px;
+    }
+    
+    .details-content {
+        padding: 20px;
+    }
+    
+    .tab-content h4 {
+        font-size: 1.2rem;
+    }
+    
+    .tab-content p {
+        font-size: 1rem;
+    }
+    
+    .lineup-cta h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sake-content {
+        padding: 20px;
+    }
+    
+    .sake-name {
+        font-size: 1.2rem;
+    }
+    
+    .sake-image {
+        height: 220px;
+    }
+    
+    .details-toggle {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+    
+    .sake-details.expanded {
+        padding: 20px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .lineup-filter,
+    .lineup-cta,
+    .header,
+    .footer,
+    .details-toggle {
+        display: none;
+    }
+    
+    .sake-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    .sake-details {
+        max-height: none !important;
+        padding: 20px !important;
+    }
+}

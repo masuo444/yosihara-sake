@@ -1,0 +1,44 @@
+{
+  "name": "yoshigen-ai-sakura-chatbot",
+  "version": "1.0.0",
+  "description": "吉源酒造場専用AIサクラチャットボット - GPT & DeepL API統合",
+  "main": "index.html",
+  "scripts": {
+    "start": "node api/chatbot-proxy.js",
+    "dev": "netlify dev",
+    "build": "echo 'Build complete for Netlify deployment'",
+    "deploy": "netlify deploy --prod",
+    "deploy:preview": "netlify deploy",
+    "test": "jest",
+    "lint": "echo 'Linting...'",
+    "format": "echo 'Formatting...'"
+  },
+  "dependencies": {
+    "openai": "^4.0.0",
+    "node-fetch": "^2.6.12",
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "@google-cloud/translate": "^8.0.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.10.1",
+    "jest": "^29.6.2"
+  },
+  "keywords": [
+    "yoshigen",
+    "sake",
+    "brewery",
+    "chatbot",
+    "AI",
+    "GPT",
+    "DeepL",
+    "multilingual",
+    "Japanese"
+  ],
+  "author": "Yoshigen Sake Brewery",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

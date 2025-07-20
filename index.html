@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吉源酒造場 - 寿齢 - 長寿を祝う酒</title>
+    <meta name="description" content="広島県尾道市の酒蔵「吉源酒造場」。安政元年（1854年）創業、代表銘柄『寿齢』を醸す老舗酒蔵です。">
+    <meta name="keywords" content="吉源酒造場, 寿齢, 日本酒, 尾道, 広島, 安政元年創業">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/japanese-modern.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/google-translate.css">
+    <link rel="stylesheet" href="css/ai-sakura-chatbot.css">
+    <link rel="stylesheet" href="css/mobile-responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="ai-sakura-icon.png">
+    
+    <!-- OGP Tags -->
+    <meta property="og:title" content="吉源酒造場 - 寿齢 - 長寿を祝う酒">
+    <meta property="og:description" content="広島県尾道市の酒蔵「吉源酒造場」。安政元年（1854年）創業、代表銘柄『寿齢』を醸す老舗酒蔵です。">
+    <meta property="og:url" content="http://yoshigen.info/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/yoshigen-og-image.jpg">
+    <meta property="og:site_name" content="吉源酒造場">
+    <meta property="og:locale" content="ja_JP">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="吉源酒造場 - 寿齢 - 長寿を祝う酒">
+    <meta name="twitter:description" content="広島県尾道市の酒蔵「吉源酒造場」。安政元年（1854年）創業、代表銘柄『寿齢』を醸す老舗酒蔵です。">
+    <meta name="twitter:image" content="assets/images/yoshigen-og-image.jpg">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo">吉源酒造場</a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" style="display: none;">☰</button>
+            <nav class="nav" id="mainNav">
+                <a href="#about" class="nav-link">蔵元について</a>
+                <a href="#products" class="nav-link">商品一覧</a>
+                <a href="#history" class="nav-link">歴史</a>
+                <a href="#access" class="nav-link">アクセス</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content fade-in">
+            <h1 class="hero-title animate-fade-in-up">吉源酒造場</h1>
+            <p class="hero-subtitle japanese-decoration animate-fade-in-up delay-200">寿齢 - 長寿を祝う酒</p>
+            <a href="#products" class="btn animate-fade-in-up delay-400 hover-lift">商品を見る</a>
+        </div>
+    </section>
+
+    <!-- 蔵元について -->
+    <section id="about" class="section scroll-fade">
+        <h2 class="section-title">吉源酒造場について</h2>
+        <div class="about-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+            <div class="about-text">
+                <h3 style="font-family: var(--font-japanese); font-size: 1.8rem; margin-bottom: 1rem; color: var(--primary-color);">安政元年創業の老舗</h3>
+                <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                    吉源酒造場は、安政元年（1854年）に広島県尾道市で創業した歴史ある酒蔵です。
+                    代表銘柄『寿齢』は、戦後、当時の当主が長命であったことにあやかり、
+                    長寿を祝うという意味を込めて名付けられました。
+                </p>
+                <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                    1981年に一度醸造を中止しましたが、1997年に地元の愛好家により復活。
+                    現在は福山市の蔵元に醸造を委託し、伝統の味を守り続けています。
+                </p>
+                <div class="features-list" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
+                    <span class="feature-tag animate-fade-in-up delay-100 hover-lift" style="background: var(--sake-wave); color: white; padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.9rem; cursor: pointer;">安政元年（1854年）創業</span>
+                    <span class="feature-tag animate-fade-in-up delay-200 hover-lift" style="background: var(--sake-wave); color: white; padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.9rem; cursor: pointer;">代表銘柄『寿齢』</span>
+                    <span class="feature-tag animate-fade-in-up delay-300 hover-lift" style="background: var(--sake-wave); color: white; padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.9rem; cursor: pointer;">地元で復活した銘酒</span>
+                </div>
+            </div>
+            <div class="about-image card" style="height: 400px; background: var(--light-blue); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+                <div style="position: absolute; inset: 0; background: var(--sake-wave); opacity: 0.1;"></div>
+                <div style="text-align: center; z-index: 1;">
+                    <div style="font-size: 4rem; color: var(--primary-color); margin-bottom: 1rem;">🍶</div>
+                    <p style="color: var(--primary-color); font-family: var(--font-japanese);">伝統の酒造り</p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- 商品一覧 -->
+    <section id="products" class="section scroll-fade" style="background: var(--light-blue);">
+        <h2 class="section-title">商品一覧 - 寿齢シリーズ</h2>
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <p style="font-size: 1.1rem; color: var(--primary-color); line-height: 1.8;">
+                吉源酒造場の「寿齢」シリーズをご紹介いたします。
+            </p>
+        </div>
+        <div class="product-grid">
+            <!-- 寿齢特選 -->
+            <div class="product-card hover-lift animate-scale-in delay-100">
+                <div class="product-image">
+                    <img src="assets/images/sake/sake-icon-daiginjo.svg" alt="寿齢特選" class="animate-float">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">寿齢特選</h3>
+                    <p class="product-type">特選</p>
+                    <p class="product-description">
+                        芳醇で深みがある味わい。吉源酒造場の技術が生きる逸品です。
+                    </p>
+                    <button class="btn btn-outline hover-glow" onclick="showProductDetail('jurei_tokusen')">詳細を見る</button>
+                </div>
+            </div>
+
+            <!-- 寿齢上撰 -->
+            <div class="product-card hover-lift animate-scale-in delay-200">
+                <div class="product-image">
+                    <img src="assets/images/sake/sake-icon-junmai.svg" alt="寿齢上撰" class="animate-float">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">寿齢上撰</h3>
+                    <p class="product-type">上撰</p>
+                    <p class="product-description">
+                        糖無しでスッキリとした飲み口。日常の食事と共に楽しめる一本です。
+                    </p>
+                    <button class="btn btn-outline hover-glow" onclick="showProductDetail('jurei_josen')">詳細を見る</button>
+                </div>
+            </div>
+
+            <!-- 寿齢 おのみち 本醸造 原酒 -->
+            <div class="product-card hover-lift animate-scale-in delay-300">
+                <div class="product-image">
+                    <img src="assets/images/sake/sake-icon-junmai.svg" alt="寿齢 おのみち 本醸造 原酒" class="animate-float">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">寿齢 おのみち 本醸造 原酒</h3>
+                    <p class="product-type">本醸造原酒</p>
+                    <p class="product-description">
+                        ドライな辛口タイプ。しっかりとした味わいが特徴の原酒です。
+                    </p>
+                    <button class="btn btn-outline hover-glow" onclick="showProductDetail('jurei_onomichi_genshu')">詳細を見る</button>
+                </div>
+            </div>
+
+            <!-- おのみち壽齢 -->
+            <div class="product-card hover-lift animate-scale-in delay-400">
+                <div class="product-image">
+                    <img src="assets/images/sake/sake-icon-seasonal.svg" alt="おのみち壽齢" class="animate-float">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">おのみち壽齢</h3>
+                    <p class="product-type">地元復活銘柄</p>
+                    <p class="product-description">
+                        1997年に地元の愛好家により復活した銘柄。尾道の誇りです。
+                    </p>
+                    <button class="btn btn-outline hover-glow" onclick="showProductDetail('onomichi_jurei')">詳細を見る</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 歴史 -->
+    <section id="history" class="section scroll-fade">
+        <h2 class="section-title">歴史と伝統</h2>
+        <div class="history-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <div class="timeline" style="margin-top: 3rem;">
+                <div class="timeline-item" style="margin-bottom: 3rem;">
+                    <h3 style="font-family: var(--font-japanese); color: var(--primary-color); margin-bottom: 1rem;">安政元年（1854年）</h3>
+                    <p>吉源酒造場創業。尾道の地で酒造りを開始。</p>
+                </div>
+                <div class="timeline-item" style="margin-bottom: 3rem;">
+                    <h3 style="font-family: var(--font-japanese); color: var(--primary-color); margin-bottom: 1rem;">戦後</h3>
+                    <p>当時の当主が長命であったことにあやかり、長寿を祝う『寿齢』が誕生。</p>
+                </div>
+                <div class="timeline-item" style="margin-bottom: 3rem;">
+                    <h3 style="font-family: var(--font-japanese); color: var(--primary-color); margin-bottom: 1rem;">1981年</h3>
+                    <p>一度醸造を中止。</p>
+                </div>
+                <div class="timeline-item" style="margin-bottom: 3rem;">
+                    <h3 style="font-family: var(--font-japanese); color: var(--primary-color); margin-bottom: 1rem;">1997年</h3>
+                    <p>地元の愛好家により『おのみち壽齢』として復活。現在は福山市の蔵元に醸造を委託。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- アクセス -->
+    <section id="access" class="section scroll-fade" style="background: var(--light-blue);">
+        <h2 class="section-title">アクセス・営業情報</h2>
+        <div style="max-width: 700px; margin: 0 auto;">
+            <div class="access-info card" style="padding: 3rem; text-align: center;">
+                <h3 style="font-family: var(--font-japanese); font-size: 1.8rem; margin-bottom: 2rem; color: var(--primary-color);">吉源酒造場</h3>
+                <div style="line-height: 2; margin-bottom: 2rem;">
+                    <p><strong>住所:</strong> 〒722-0000 広島県尾道市三軒家町14-6</p>
+                    <p><strong>電話:</strong> 0848-23-2771</p>
+                    <p><strong>営業時間:</strong> 9:00-18:00</p>
+                    <p><strong>定休日:</strong> 日曜日、祝日</p>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <a href="http://yoshigen.info/" class="btn btn-outline" target="_blank">🌐 公式サイト</a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>吉源酒造場</h3>
+                <p>寿齢 - 長寿を祝う酒</p>
+                <p style="margin-top: 1rem;">安政元年（1854年）創業の広島県尾道市の酒蔵</p>
+            </div>
+            <div class="footer-section">
+                <h3>営業情報</h3>
+                <p>営業時間: 9:00-18:00</p>
+                <p>定休日: 日曜日、祝日</p>
+            </div>
+            <div class="footer-section">
+                <h3>所在地・連絡先</h3>
+                <p>〒722-0000</p>
+                <p>広島県尾道市三軒家町14-6</p>
+                <p>TEL: 0848-23-2771</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 吉源酒造場. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- AIサクラ チャットボット -->
+    <div class="chatbot-container">
+        <button class="chatbot-button animate-pulse" onclick="toggleChatbot()">
+            <img src="ai-sakura-icon.png" alt="AIサクラ" class="chatbot-avatar-btn">
+        </button>
+    </div>
+
+    <!-- AIサクラ チャットボットウィンドウ -->
+    <div id="chatbotWindow" class="chatbot-window" style="display: none;">
+        <!-- コンテンツはJavaScriptで動的に生成 -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/google-translate.js"></script>
+    <script src="js/ai-sakura-chatbot.js"></script>
+    <script>
+        // スクロールアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-fade').forEach(el => {
+            observer.observe(el);
+        });
+
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 商品詳細表示（仮実装）
+        function showProductDetail(productId) {
+            const products = {
+                'jurei_tokusen': '寿齢特選 - 芳醇で深みがある味わい',
+                'jurei_josen': '寿齢上撰 - 糖無しでスッキリとした飲み口',
+                'jurei_onomichi_genshu': '寿齢 おのみち 本醸造 原酒 - ドライな辛口タイプ',
+                'onomichi_jurei': 'おのみち壽齢 - 1997年に地元の愛好家により復活した銘柄'
+            };
+            alert(products[productId] || '商品情報が見つかりません。');
+        }
+
+        // チャットボット機能はai-sakura-chatbot.jsで処理
+
+
+        // モバイルメニュー切り替え
+        function toggleMobileMenu() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        }
+
+        // メディアクエリでモバイルメニューボタン表示制御
+        const mediaQuery = window.matchMedia('(max-width: 768px)');
+        function handleMediaQuery(e) {
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            if (e.matches) {
+                menuBtn.style.display = 'block';
+            } else {
+                menuBtn.style.display = 'none';
+                document.getElementById('mainNav').classList.remove('active');
+            }
+        }
+        mediaQuery.addListener(handleMediaQuery);
+        handleMediaQuery(mediaQuery);
+    </script>
+</body>
+</html>

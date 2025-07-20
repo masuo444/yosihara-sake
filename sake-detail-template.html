@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>銘柄名 | yodobloom SAKE</title>
+    <meta name="description" content="yodobloom SAKEの銘柄詳細ページ">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sake-detail.css">
+    <link rel="stylesheet" href="css/premium-translate.css">
+    <link rel="icon" href="assets/images/yodobloom-favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <h1><a href="index.html">yodobloom SAKE</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="index.html#products">商品一覧</a></li>
+                <li><a href="index.html#story">こだわり</a></li>
+                <li><a href="index.html#ai-sakura">AIサポート</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="sake-detail-main">
+        <!-- Hero Section -->
+        <section class="detail-hero">
+            <div class="container">
+                <div class="detail-hero-content">
+                    <div class="detail-image-wrapper">
+                        <img src="" alt="" class="detail-main-image" id="sakeImage">
+                        <div class="detail-badges">
+                            <span class="detail-badge award" id="awardBadge" style="display: none;">受賞歴あり</span>
+                        </div>
+                    </div>
+                    <div class="detail-info-wrapper">
+                        <h1 class="detail-title" id="sakeName">銘柄名</h1>
+                        <p class="detail-type" id="sakeType">種類</p>
+                        <p class="detail-description" id="sakeDescription">説明文</p>
+                        <div class="detail-specs">
+                            <div class="spec-row">
+                                <span class="spec-label">蔵元</span>
+                                <span class="spec-value" id="brewery">-</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">精米歩合</span>
+                                <span class="spec-value" id="polishingRatio">-</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">アルコール度数</span>
+                                <span class="spec-value" id="alcoholContent">-</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">日本酒度</span>
+                                <span class="spec-value" id="sakeMeter">-</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">酸度</span>
+                                <span class="spec-value" id="acidity">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Information Tabs -->
+        <section class="detail-tabs-section">
+            <div class="container">
+                <div class="detail-tabs">
+                    <button class="detail-tab-btn active" data-tab="overview">概要</button>
+                    <button class="detail-tab-btn" data-tab="taste">味わい</button>
+                    <button class="detail-tab-btn" data-tab="pairing">ペアリング</button>
+                    <button class="detail-tab-btn" data-tab="brewery-info">蔵元情報</button>
+                </div>
+                
+                <div class="detail-tab-content">
+                    <div class="tab-pane active" data-tab="overview">
+                        <h2>商品概要</h2>
+                        <div id="overviewContent">
+                            <p>商品の詳細な説明が入ります。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" data-tab="taste">
+                        <h2>味わいの特徴</h2>
+                        <div id="tasteContent">
+                            <p>味わいの詳細な説明が入ります。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" data-tab="pairing">
+                        <h2>おすすめのペアリング</h2>
+                        <div id="pairingContent">
+                            <p>ペアリングの提案が入ります。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" data-tab="brewery-info">
+                        <h2>蔵元について</h2>
+                        <div id="breweryContent">
+                            <p>蔵元の歴史や特徴が入ります。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>yodobloom SAKE</h3>
+                    <p>日本酒テーマパーク - 大阪・北区</p>
+                </div>
+                <div class="footer-info">
+                    <h4>お問い合わせ</h4>
+                    <p>06-4802-1010</p>
+                    <p>大阪市北区大深町1-1 2階</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/global-translate.js"></script>
+    <script src="js/enhanced-chatbot.js"></script>
+    <script src="js/sake-knowledge-chatbot.js"></script>
+    <script src="js/sake-detail.js"></script>
+</body>
+</html>

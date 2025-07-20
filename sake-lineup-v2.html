@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>厳選日本酒ラインナップ | yodobloom SAKE</title>
+    <meta name="description" content="yodobloom SAKEが季節ごとに厳選した100種類の日本酒ラインナップ。全国の優秀な蔵元から集めた逸品をご紹介します。">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sake-lineup-v2.css">
+    <link rel="stylesheet" href="css/premium-translate.css">
+    <link rel="icon" href="assets/images/yodobloom-favicon.ico">
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <h1><a href="index.html">yodobloom SAKE</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="index.html#products" class="active">商品一覧</a></li>
+                <li><a href="index.html#story">こだわり</a></li>
+                <li><a href="index.html#ai-sakura">AIサポート</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="sake-lineup-main">
+        <!-- Hero Section -->
+        <section class="lineup-hero">
+            <div class="container">
+                <h1 class="lineup-title">厳選日本酒ラインナップ</h1>
+                <p class="lineup-subtitle">季節ごとに選び抜かれた逸品をお楽しみください</p>
+            </div>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="lineup-filter">
+            <div class="container">
+                <div class="filter-wrapper">
+                    <h3>カテゴリー選択</h3>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-category="all">
+                            <span class="filter-icon">🍶</span>
+                            <span>全商品</span>
+                        </button>
+                        <button class="filter-btn" data-category="junmai-daiginjo">
+                            <span class="filter-icon">✨</span>
+                            <span>純米大吟醸</span>
+                        </button>
+                        <button class="filter-btn" data-category="junmai-ginjo">
+                            <span class="filter-icon">🌸</span>
+                            <span>純米・吟醸</span>
+                        </button>
+                        <button class="filter-btn" data-category="special">
+                            <span class="filter-icon">🏆</span>
+                            <span>特別限定</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sake Grid -->
+        <section class="lineup-grid">
+            <div class="container">
+                <div class="sake-grid" id="sakeGrid">
+                    
+                    <!-- 鳴門鯛 LED -->
+                    <article class="sake-card modern" data-category="junmai-ginjo" data-sake-id="narutotai-led">
+                        <div class="sake-card-inner">
+                            <div class="sake-image">
+                                <img src="鳴門鯛 LED（レッド）（本家松浦酒造・徳島）.JPG" alt="鳴門鯛 LED（レッド）">
+                                <div class="sake-badge award">プラチナ賞受賞</div>
+                                <div class="sake-rating">
+                                    <span class="stars">★★★★★</span>
+                                </div>
+                            </div>
+                            <div class="sake-content">
+                                <div class="sake-header">
+                                    <h3 class="sake-name">鳴門鯛 LED（レッド）</h3>
+                                    <span class="sake-type">純米吟醸</span>
+                                </div>
+                                <p class="sake-description">
+                                    LED照射による独自酵母で生まれたモダンな味わい。Kura Masterプラチナ賞受賞。
+                                </p>
+                                <div class="sake-specs">
+                                    <span class="spec-item">
+                                        <span class="spec-label">精米歩合</span>
+                                        <span class="spec-value">55%</span>
+                                    </span>
+                                    <span class="spec-item">
+                                        <span class="spec-label">アルコール度</span>
+                                        <span class="spec-value">15%</span>
+                                    </span>
+                                </div>
+                                <div class="sake-tags">
+                                    <span class="sake-tag modern">モダン</span>
+                                    <span class="sake-tag award">受賞歴</span>
+                                    <span class="sake-tag unique">独自製法</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="details-toggle" onclick="toggleSakeDetails('narutotai-led')">
+                            <span class="toggle-text">詳細を見る</span>
+                            <span class="toggle-icon">▼</span>
+                        </button>
+                        <div class="sake-details" id="narutotai-led-details">
+                            <div class="details-tabs">
+                                <button class="tab-btn active" data-tab="overview">概要</button>
+                                <button class="tab-btn" data-tab="brewing">製法</button>
+                                <button class="tab-btn" data-tab="tasting">味わい</button>
+                                <button class="tab-btn" data-tab="pairing">ペアリング</button>
+                            </div>
+                            <div class="details-content">
+                                <div class="tab-content active" data-tab="overview">
+                                    <h4>商品概要</h4>
+                                    <p><strong>蔵元:</strong> 徳島酒造（徳島県）</p>
+                                    <p><strong>受賞歴:</strong> Kura Master プラチナ賞、全国燗酒コンテスト金賞</p>
+                                    <p><strong>特徴:</strong> LED照射により培養した独自酵母を使用した革新的な製法</p>
+                                </div>
+                                <div class="tab-content" data-tab="brewing">
+                                    <h4>製法・原料</h4>
+                                    <p><strong>原料米:</strong> 徳島県産米100%</p>
+                                    <p><strong>酵母:</strong> LED照射培養酵母（独自開発）</p>
+                                    <p><strong>製法:</strong> 低温長期発酵、袋吊り搾り</p>
+                                    <p><strong>貯蔵:</strong> 氷温貯蔵で香味を保持</p>
+                                </div>
+                                <div class="tab-content" data-tab="tasting">
+                                    <h4>味わい・香り</h4>
+                                    <p><strong>香り:</strong> フルーティーで華やか、洋梨とバナナのニュアンス</p>
+                                    <p><strong>味わい:</strong> なめらかで上品、ほのかな甘味と爽やかな酸味</p>
+                                    <p><strong>後味:</strong> キレが良く、上品な余韻が長く続く</p>
+                                    <p><strong>温度帯:</strong> 冷酒（8-12℃）が最適</p>
+                                </div>
+                                <div class="tab-content" data-tab="pairing">
+                                    <h4>おすすめペアリング</h4>
+                                    <p><strong>和食:</strong> 白身魚の刺身、天ぷら、茶碗蒸し</p>
+                                    <p><strong>洋食:</strong> 生ハム、チーズ、シーフードサラダ</p>
+                                    <p><strong>デザート:</strong> フルーツタルト、和菓子</p>
+                                    <p><strong>季節:</strong> 春～夏に特におすすめ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 純米大吟醸 悠星 -->
+                    <article class="sake-card elegant" data-category="junmai-daiginjo" data-sake-id="yusei">
+                        <div class="sake-card-inner">
+                            <div class="sake-image">
+                                <img src="純米大吟醸 悠星（ゆうせい）720ml（白牡丹酒造・広島）.JPG" alt="純米大吟醸 悠星">
+                                <div class="sake-badge premium">プレミアム</div>
+                                <div class="sake-rating">
+                                    <span class="stars">★★★★☆</span>
+                                </div>
+                            </div>
+                            <div class="sake-content">
+                                <div class="sake-header">
+                                    <h3 class="sake-name">純米大吟醸 悠星（ゆうせい）</h3>
+                                    <span class="sake-type">純米大吟醸</span>
+                                </div>
+                                <p class="sake-description">
+                                    星が瞬く瀬戸内の夜と厳島神社をイメージした上品な一本。ジューシーなメロン香が特徴。
+                                </p>
+                                <div class="sake-specs">
+                                    <span class="spec-item">
+                                        <span class="spec-label">精米歩合</span>
+                                        <span class="spec-value">40%</span>
+                                    </span>
+                                    <span class="spec-item">
+                                        <span class="spec-label">アルコール度</span>
+                                        <span class="spec-value">16%</span>
+                                    </span>
+                                </div>
+                                <div class="sake-tags">
+                                    <span class="sake-tag elegant">上品</span>
+                                    <span class="sake-tag fruity">フルーティー</span>
+                                    <span class="sake-tag regional">瀬戸内</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="details-toggle" onclick="toggleSakeDetails('yusei')">
+                            <span class="toggle-text">詳細を見る</span>
+                            <span class="toggle-icon">▼</span>
+                        </button>
+                        <div class="sake-details" id="yusei-details">
+                            <div class="details-tabs">
+                                <button class="tab-btn active" data-tab="overview">概要</button>
+                                <button class="tab-btn" data-tab="brewing">製法</button>
+                                <button class="tab-btn" data-tab="tasting">味わい</button>
+                                <button class="tab-btn" data-tab="pairing">ペアリング</button>
+                            </div>
+                            <div class="details-content">
+                                <div class="tab-content active" data-tab="overview">
+                                    <h4>商品概要</h4>
+                                    <p><strong>蔵元:</strong> 賀茂鶴酒造（広島県）</p>
+                                    <p><strong>コンセプト:</strong> 星が瞬く瀬戸内の夜と厳島神社の美しさを表現</p>
+                                    <p><strong>特徴:</strong> ジューシーなメロン香と上品な甘味のバランス</p>
+                                </div>
+                                <div class="tab-content" data-tab="brewing">
+                                    <h4>製法・原料</h4>
+                                    <p><strong>原料米:</strong> 山田錦（特等級）</p>
+                                    <p><strong>精米歩合:</strong> 40%</p>
+                                    <p><strong>酵母:</strong> 広島酵母</p>
+                                    <p><strong>仕込み水:</strong> 西条の名水</p>
+                                </div>
+                                <div class="tab-content" data-tab="tasting">
+                                    <h4>味わい・香り</h4>
+                                    <p><strong>香り:</strong> ジューシーなメロン、白桃、ライチ</p>
+                                    <p><strong>味わい:</strong> 上品な甘味、なめらかな口当たり</p>
+                                    <p><strong>後味:</strong> 長い余韻と上品な消え方</p>
+                                    <p><strong>温度帯:</strong> 冷酒～常温</p>
+                                </div>
+                                <div class="tab-content" data-tab="pairing">
+                                    <h4>おすすめペアリング</h4>
+                                    <p><strong>和食:</strong> 懐石料理、白身魚の煮付け</p>
+                                    <p><strong>洋食:</strong> フォアグラ、白身魚のムニエル</p>
+                                    <p><strong>特別な場面:</strong> お祝い事、贈答品として</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 令和一号酵母 -->
+                    <article class="sake-card innovative" data-category="junmai-daiginjo" data-sake-id="reiwa-ichigo">
+                        <div class="sake-card-inner">
+                            <div class="sake-image">
+                                <img src="純米大吟醸 令和一号酵母（れいわいちごうこうぼ）720ml（白牡丹酒造・広島）.JPG" alt="純米大吟醸 令和一号酵母">
+                                <div class="sake-badge new">令和新時代</div>
+                                <div class="sake-rating">
+                                    <span class="stars">★★★★☆</span>
+                                </div>
+                            </div>
+                            <div class="sake-content">
+                                <div class="sake-header">
+                                    <h3 class="sake-name">純米大吟醸 令和一号酵母</h3>
+                                    <span class="sake-type">純米大吟醸</span>
+                                </div>
+                                <p class="sake-description">
+                                    広島県開発の令和一号酵母で醸造。果実様の香りが特徴の優雅な仕上がり。
+                                </p>
+                                <div class="sake-specs">
+                                    <span class="spec-item">
+                                        <span class="spec-label">精米歩合</span>
+                                        <span class="spec-value">45%</span>
+                                    </span>
+                                    <span class="spec-item">
+                                        <span class="spec-label">アルコール度</span>
+                                        <span class="spec-value">16%</span>
+                                    </span>
+                                </div>
+                                <div class="sake-tags">
+                                    <span class="sake-tag new">令和酵母</span>
+                                    <span class="sake-tag fruity">果実香</span>
+                                    <span class="sake-tag elegant">優雅</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="details-toggle" onclick="toggleSakeDetails('reiwa-ichigo')">
+                            <span class="toggle-text">詳細を見る</span>
+                            <span class="toggle-icon">▼</span>
+                        </button>
+                        <div class="sake-details" id="reiwa-ichigo-details">
+                            <div class="details-tabs">
+                                <button class="tab-btn active" data-tab="overview">概要</button>
+                                <button class="tab-btn" data-tab="brewing">製法</button>
+                                <button class="tab-btn" data-tab="tasting">味わい</button>
+                                <button class="tab-btn" data-tab="pairing">ペアリング</button>
+                            </div>
+                            <div class="details-content">
+                                <div class="tab-content active" data-tab="overview">
+                                    <h4>商品概要</h4>
+                                    <p><strong>蔵元:</strong> 賀茂鶴酒造（広島県）</p>
+                                    <p><strong>開発:</strong> 広島県立総合技術研究所</p>
+                                    <p><strong>特徴:</strong> 令和元年に開発された新酵母使用</p>
+                                </div>
+                                <div class="tab-content" data-tab="brewing">
+                                    <h4>製法・原料</h4>
+                                    <p><strong>原料米:</strong> 山田錦</p>
+                                    <p><strong>酵母:</strong> 令和一号酵母（広島県開発）</p>
+                                    <p><strong>特徴:</strong> 新時代の技術と伝統の融合</p>
+                                </div>
+                                <div class="tab-content" data-tab="tasting">
+                                    <h4>味わい・香り</h4>
+                                    <p><strong>香り:</strong> 洋梨、白桃、花のような華やかさ</p>
+                                    <p><strong>味わい:</strong> フルーティーで上品な甘味</p>
+                                    <p><strong>革新性:</strong> 令和酵母ならではの現代的な味わい</p>
+                                </div>
+                                <div class="tab-content" data-tab="pairing">
+                                    <h4>おすすめペアリング</h4>
+                                    <p><strong>和食:</strong> 季節の天ぷら、白身魚</p>
+                                    <p><strong>洋食:</strong> 白身魚のカルパッチョ</p>
+                                    <p><strong>特別感:</strong> 新時代を祝う乾杯酒として</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 百黙 純米大吟醸 -->
+                    <article class="sake-card premium" data-category="junmai-daiginjo" data-sake-id="hyakumoku">
+                        <div class="sake-card-inner">
+                            <div class="sake-image">
+                                <img src="百黙 純米大吟醸 720ml（菊正宗・兵庫）.WEBP" alt="百黙 純米大吟醸">
+                                <div class="sake-badge master">職人技</div>
+                                <div class="sake-rating">
+                                    <span class="stars">★★★★★</span>
+                                </div>
+                            </div>
+                            <div class="sake-content">
+                                <div class="sake-header">
+                                    <h3 class="sake-name">百黙 純米大吟醸</h3>
+                                    <span class="sake-type">純米大吟醸</span>
+                                </div>
+                                <p class="sake-description">
+                                    特A地区山田錦使用。洋梨→プラム→黄桃と続く果実香が魅力。菊正宗の技術が光る逸品。
+                                </p>
+                                <div class="sake-specs">
+                                    <span class="spec-item">
+                                        <span class="spec-label">精米歩合</span>
+                                        <span class="spec-value">40%</span>
+                                    </span>
+                                    <span class="spec-item">
+                                        <span class="spec-label">アルコール度</span>
+                                        <span class="spec-value">17%</span>
+                                    </span>
+                                </div>
+                                <div class="sake-tags">
+                                    <span class="sake-tag premium">特A地区</span>
+                                    <span class="sake-tag complex">複層香</span>
+                                    <span class="sake-tag traditional">菊正宗</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="details-toggle" onclick="toggleSakeDetails('hyakumoku')">
+                            <span class="toggle-text">詳細を見る</span>
+                            <span class="toggle-icon">▼</span>
+                        </button>
+                        <div class="sake-details" id="hyakumoku-details">
+                            <div class="details-tabs">
+                                <button class="tab-btn active" data-tab="overview">概要</button>
+                                <button class="tab-btn" data-tab="brewing">製法</button>
+                                <button class="tab-btn" data-tab="tasting">味わい</button>
+                                <button class="tab-btn" data-tab="pairing">ペアリング</button>
+                            </div>
+                            <div class="details-content">
+                                <div class="tab-content active" data-tab="overview">
+                                    <h4>商品概要</h4>
+                                    <p><strong>蔵元:</strong> 菊正宗酒造（兵庫県）</p>
+                                    <p><strong>歴史:</strong> 1659年創業の伝統蔵</p>
+                                    <p><strong>特徴:</strong> 特A地区山田錦による最高級品</p>
+                                </div>
+                                <div class="tab-content" data-tab="brewing">
+                                    <h4>製法・原料</h4>
+                                    <p><strong>原料米:</strong> 特A地区山田錦100%</p>
+                                    <p><strong>精米歩合:</strong> 40%</p>
+                                    <p><strong>製法:</strong> 伝統的な槽搾り</p>
+                                    <p><strong>熟成:</strong> 低温長期熟成</p>
+                                </div>
+                                <div class="tab-content" data-tab="tasting">
+                                    <h4>味わい・香り</h4>
+                                    <p><strong>香りの変化:</strong> 洋梨→プラム→黄桃の複層的な香り</p>
+                                    <p><strong>味わい:</strong> 深みのある甘味と酸味のバランス</p>
+                                    <p><strong>後味:</strong> 長く続く上品な余韻</p>
+                                </div>
+                                <div class="tab-content" data-tab="pairing">
+                                    <h4>おすすめペアリング</h4>
+                                    <p><strong>和食:</strong> 会席料理、高級刺身</p>
+                                    <p><strong>洋食:</strong> フレンチ、イタリアン</p>
+                                    <p><strong>特別な時:</strong> 接待、お祝い事</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 百黙 Alt.3 -->
+                    <article class="sake-card unique" data-category="special" data-sake-id="hyakumoku-alt3">
+                        <div class="sake-card-inner">
+                            <div class="sake-image">
+                                <img src="百黙 Alt.3（オルトスリー）720ml（菊正宗・兵庫）.JPG" alt="百黙 Alt.3">
+                                <div class="sake-badge limited">限定ブレンド</div>
+                                <div class="sake-rating">
+                                    <span class="stars">★★★★★</span>
+                                </div>
+                            </div>
+                            <div class="sake-content">
+                                <div class="sake-header">
+                                    <h3 class="sake-name">百黙 Alt.3（オルトスリー）</h3>
+                                    <span class="sake-type">純米ブレンド</span>
+                                </div>
+                                <p class="sake-description">
+                                    「第三の選択」を意味する特別ブレンド。グランクリュ級山田錦の複層的な味わい。
+                                </p>
+                                <div class="sake-specs">
+                                    <span class="spec-item">
+                                        <span class="spec-label">精米歩合</span>
+                                        <span class="spec-value">ブレンド</span>
+                                    </span>
+                                    <span class="spec-item">
+                                        <span class="spec-label">アルコール度</span>
+                                        <span class="spec-value">16%</span>
+                                    </span>
+                                </div>
+                                <div class="sake-tags">
+                                    <span class="sake-tag unique">第三の選択</span>
+                                    <span class="sake-tag complex">複層的</span>
+                                    <span class="sake-tag limited">特別ブレンド</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="details-toggle" onclick="toggleSakeDetails('hyakumoku-alt3')">
+                            <span class="toggle-text">詳細を見る</span>
+                            <span class="toggle-icon">▼</span>
+                        </button>
+                        <div class="sake-details" id="hyakumoku-alt3-details">
+                            <div class="details-tabs">
+                                <button class="tab-btn active" data-tab="overview">概要</button>
+                                <button class="tab-btn" data-tab="brewing">製法</button>
+                                <button class="tab-btn" data-tab="tasting">味わい</button>
+                                <button class="tab-btn" data-tab="pairing">ペアリング</button>
+                            </div>
+                            <div class="details-content">
+                                <div class="tab-content active" data-tab="overview">
+                                    <h4>商品概要</h4>
+                                    <p><strong>蔵元:</strong> 菊正宗酒造（兵庫県）</p>
+                                    <p><strong>コンセプト:</strong> Alternative（代替選択肢）の3番目</p>
+                                    <p><strong>特徴:</strong> 複数の純米原酒をブレンドした革新的な一本</p>
+                                </div>
+                                <div class="tab-content" data-tab="brewing">
+                                    <h4>製法・原料</h4>
+                                    <p><strong>原料:</strong> 特A地区山田錦（グランクリュ級）</p>
+                                    <p><strong>製法:</strong> 複数の純米原酒をブレンド</p>
+                                    <p><strong>ブレンド:</strong> 熟練ブレンダーによる調合</p>
+                                </div>
+                                <div class="tab-content" data-tab="tasting">
+                                    <h4>味わい・香り</h4>
+                                    <p><strong>香り:</strong> 華やかでありながら、甘さ・苦味・フレッシュさ・丸みが融合</p>
+                                    <p><strong>味わい:</strong> 複層的な味、ブレンドによる味の厚みと複雑性</p>
+                                    <p><strong>特徴:</strong> 他の百黙シリーズより引き締まった苦味がアクセント</p>
+                                </div>
+                                <div class="tab-content" data-tab="pairing">
+                                    <h4>おすすめペアリング</h4>
+                                    <p><strong>おすすめ温度:</strong> 冷やしめ（8～12℃）で香りと果実感、常温～15℃で全体のバランス</p>
+                                    <p><strong>相性の良い料理:</strong> 生ハム、ナッツ、熟成チーズ</p>
+                                    <p><strong>プロコメント:</strong> お酒単体での"余韻を愉しむ"シーンにも映える重量感です。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 超特撰 惣花 -->
+                    <article class="sake-card premium" data-category="junmai-daiginjo" data-sake-id="souka">
+                        <div class="sake-card-inner">
+                            <div class="sake-image">
+                                <img src="超特撰 惣花（そうか） 純米大吟醸 木箱入り 720ml（永澤酒造・兵庫・吉川町 特A地区山田錦）.jpg" alt="超特撰 惣花">
+                                <div class="sake-badge premium">特A地区</div>
+                                <div class="sake-rating">
+                                    <span class="stars">★★★★★</span>
+                                </div>
+                            </div>
+                            <div class="sake-content">
+                                <div class="sake-header">
+                                    <h3 class="sake-name">超特撰 惣花（そうか）</h3>
+                                    <span class="sake-type">純米大吟醸</span>
+                                </div>
+                                <p class="sake-description">
+                                    兵庫県吉川町特A地区山田錦使用。木箱入りの超特撰品。永澤酒造の最高峰。
+                                </p>
+                                <div class="sake-specs">
+                                    <span class="spec-item">
+                                        <span class="spec-label">精米歩合</span>
+                                        <span class="spec-value">35%</span>
+                                    </span>
+                                    <span class="spec-item">
+                                        <span class="spec-label">アルコール度</span>
+                                        <span class="spec-value">16%</span>
+                                    </span>
+                                </div>
+                                <div class="sake-tags">
+                                    <span class="sake-tag premium">特A地区</span>
+                                    <span class="sake-tag elegant">超特撰</span>
+                                    <span class="sake-tag limited">木箱入り</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="details-toggle" onclick="toggleSakeDetails('souka')">
+                            <span class="toggle-text">詳細を見る</span>
+                            <span class="toggle-icon">▼</span>
+                        </button>
+                        <div class="sake-details" id="souka-details">
+                            <div class="details-tabs">
+                                <button class="tab-btn active" data-tab="overview">概要</button>
+                                <button class="tab-btn" data-tab="brewing">製法</button>
+                                <button class="tab-btn" data-tab="tasting">味わい</button>
+                                <button class="tab-btn" data-tab="pairing">ペアリング</button>
+                            </div>
+                            <div class="details-content">
+                                <div class="tab-content active" data-tab="overview">
+                                    <h4>商品概要</h4>
+                                    <p><strong>蔵元:</strong> 永澤酒造（兵庫県）</p>
+                                    <p><strong>原料:</strong> 特A地区山田錦（兵庫県吉川町）</p>
+                                    <p><strong>特徴:</strong> 木箱入りの超特撰品</p>
+                                </div>
+                                <div class="tab-content" data-tab="brewing">
+                                    <h4>製法・原料</h4>
+                                    <p><strong>原料米:</strong> 特A地区山田錦100%</p>
+                                    <p><strong>精米歩合:</strong> 35%</p>
+                                    <p><strong>製法:</strong> 伝統的な手造り</p>
+                                    <p><strong>包装:</strong> 木箱入り</p>
+                                </div>
+                                <div class="tab-content" data-tab="tasting">
+                                    <h4>味わい・香り</h4>
+                                    <p><strong>香り:</strong> 上品で華やかな吟醸香</p>
+                                    <p><strong>味わい:</strong> 深みのある味わいと上品な甘味</p>
+                                    <p><strong>後味:</strong> 長く続く余韻</p>
+                                </div>
+                                <div class="tab-content" data-tab="pairing">
+                                    <h4>おすすめペアリング</h4>
+                                    <p><strong>和食:</strong> 懐石料理、高級刺身</p>
+                                    <p><strong>特別な時:</strong> 贈答品、お祝い事</p>
+                                    <p><strong>温度:</strong> 冷酒が最適</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 純米大吟醸 生酒 -->
+                    <article class="sake-card fresh" data-category="junmai-daiginjo" data-sake-id="namazake">
+                        <div class="sake-card-inner">
+                            <div class="sake-image">
+                                <img src="純米大吟醸 生酒 720ml.jpg" alt="純米大吟醸 生酒">
+                                <div class="sake-badge fresh">生酒</div>
+                                <div class="sake-rating">
+                                    <span class="stars">★★★★☆</span>
+                                </div>
+                            </div>
+                            <div class="sake-content">
+                                <div class="sake-header">
+                                    <h3 class="sake-name">純米大吟醸 生酒</h3>
+                                    <span class="sake-type">純米大吟醸</span>
+                                </div>
+                                <p class="sake-description">
+                                    火入れをしていない生酒。フレッシュな味わいと華やかな香りが特徴。
+                                </p>
+                                <div class="sake-specs">
+                                    <span class="spec-item">
+                                        <span class="spec-label">精米歩合</span>
+                                        <span class="spec-value">50%</span>
+                                    </span>
+                                    <span class="spec-item">
+                                        <span class="spec-label">アルコール度</span>
+                                        <span class="spec-value">16%</span>
+                                    </span>
+                                </div>
+                                <div class="sake-tags">
+                                    <span class="sake-tag fresh">生酒</span>
+                                    <span class="sake-tag fruity">フレッシュ</span>
+                                    <span class="sake-tag seasonal">季節限定</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="details-toggle" onclick="toggleSakeDetails('namazake')">
+                            <span class="toggle-text">詳細を見る</span>
+                            <span class="toggle-icon">▼</span>
+                        </button>
+                        <div class="sake-details" id="namazake-details">
+                            <div class="details-tabs">
+                                <button class="tab-btn active" data-tab="overview">概要</button>
+                                <button class="tab-btn" data-tab="brewing">製法</button>
+                                <button class="tab-btn" data-tab="tasting">味わい</button>
+                                <button class="tab-btn" data-tab="pairing">ペアリング</button>
+                            </div>
+                            <div class="details-content">
+                                <div class="tab-content active" data-tab="overview">
+                                    <h4>商品概要</h4>
+                                    <p><strong>特徴:</strong> 火入れをしていない生酒</p>
+                                    <p><strong>保存:</strong> 要冷蔵</p>
+                                    <p><strong>味わい:</strong> フレッシュで華やか</p>
+                                </div>
+                                <div class="tab-content" data-tab="brewing">
+                                    <h4>製法・原料</h4>
+                                    <p><strong>製法:</strong> 火入れなし（生酒）</p>
+                                    <p><strong>精米歩合:</strong> 50%</p>
+                                    <p><strong>保存:</strong> 低温管理</p>
+                                </div>
+                                <div class="tab-content" data-tab="tasting">
+                                    <h4>味わい・香り</h4>
+                                    <p><strong>香り:</strong> フレッシュで華やか</p>
+                                    <p><strong>味わい:</strong> 生き生きとした口当たり</p>
+                                    <p><strong>特徴:</strong> 生酒特有の瑞々しさ</p>
+                                </div>
+                                <div class="tab-content" data-tab="pairing">
+                                    <h4>おすすめペアリング</h4>
+                                    <p><strong>和食:</strong> 刺身、春野菜の天ぷら</p>
+                                    <p><strong>温度:</strong> よく冷やして</p>
+                                    <p><strong>季節:</strong> 春～夏におすすめ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 純米大吟醸 無濾過原酒 龍が如く -->
+                    <article class="sake-card bold" data-category="junmai-daiginjo" data-sake-id="tosatsuru">
+                        <div class="sake-card-inner">
+                            <div class="sake-image">
+                                <img src="純米大吟醸 無濾過原酒　龍が如く（土佐鶴酒造・高知.jpg" alt="純米大吟醸 無濾過原酒 龍が如く">
+                                <div class="sake-badge bold">無濾過原酒</div>
+                                <div class="sake-rating">
+                                    <span class="stars">★★★★★</span>
+                                </div>
+                            </div>
+                            <div class="sake-content">
+                                <div class="sake-header">
+                                    <h3 class="sake-name">純米大吟醸 無濾過原酒 龍が如く</h3>
+                                    <span class="sake-type">純米大吟醸</span>
+                                </div>
+                                <p class="sake-description">
+                                    土佐鶴酒造の無濾過原酒。力強い味わいと深い旨味が特徴の本格派。
+                                </p>
+                                <div class="sake-specs">
+                                    <span class="spec-item">
+                                        <span class="spec-label">精米歩合</span>
+                                        <span class="spec-value">50%</span>
+                                    </span>
+                                    <span class="spec-item">
+                                        <span class="spec-label">アルコール度</span>
+                                        <span class="spec-value">17%</span>
+                                    </span>
+                                </div>
+                                <div class="sake-tags">
+                                    <span class="sake-tag bold">無濾過</span>
+                                    <span class="sake-tag strong">原酒</span>
+                                    <span class="sake-tag regional">土佐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="details-toggle" onclick="toggleSakeDetails('tosatsuru')">
+                            <span class="toggle-text">詳細を見る</span>
+                            <span class="toggle-icon">▼</span>
+                        </button>
+                        <div class="sake-details" id="tosatsuru-details">
+                            <div class="details-tabs">
+                                <button class="tab-btn active" data-tab="overview">概要</button>
+                                <button class="tab-btn" data-tab="brewing">製法</button>
+                                <button class="tab-btn" data-tab="tasting">味わい</button>
+                                <button class="tab-btn" data-tab="pairing">ペアリング</button>
+                            </div>
+                            <div class="details-content">
+                                <div class="tab-content active" data-tab="overview">
+                                    <h4>商品概要</h4>
+                                    <p><strong>蔵元:</strong> 土佐鶴酒造（高知県）</p>
+                                    <p><strong>特徴:</strong> 無濾過原酒の力強い味わい</p>
+                                    <p><strong>地域:</strong> 土佐の伝統</p>
+                                </div>
+                                <div class="tab-content" data-tab="brewing">
+                                    <h4>製法・原料</h4>
+                                    <p><strong>製法:</strong> 無濾過原酒</p>
+                                    <p><strong>精米歩合:</strong> 50%</p>
+                                    <p><strong>特徴:</strong> 濾過せずに瓶詰め</p>
+                                </div>
+                                <div class="tab-content" data-tab="tasting">
+                                    <h4>味わい・香り</h4>
+                                    <p><strong>香り:</strong> 力強く深い香り</p>
+                                    <p><strong>味わい:</strong> 濃厚で旨味豊か</p>
+                                    <p><strong>特徴:</strong> 原酒らしい骨太な味</p>
+                                </div>
+                                <div class="tab-content" data-tab="pairing">
+                                    <h4>おすすめペアリング</h4>
+                                    <p><strong>和食:</strong> 鰹のたたき、土佐料理</p>
+                                    <p><strong>温度:</strong> 冷酒～常温</p>
+                                    <p><strong>特徴:</strong> 力強い料理に合う</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 吟醸酒 アジュール -->
+                    <article class="sake-card modern" data-category="junmai-ginjo" data-sake-id="azure">
+                        <div class="sake-card-inner">
+                            <div class="sake-image">
+                                <img src="吟醸酒 アジュール 720ml（土佐鶴酒造・高知）.jpg" alt="吟醸酒 アジュール">
+                                <div class="sake-badge modern">モダン</div>
+                                <div class="sake-rating">
+                                    <span class="stars">★★★★☆</span>
+                                </div>
+                            </div>
+                            <div class="sake-content">
+                                <div class="sake-header">
+                                    <h3 class="sake-name">吟醸酒 アジュール</h3>
+                                    <span class="sake-type">吟醸酒</span>
+                                </div>
+                                <p class="sake-description">
+                                    土佐鶴酒造のモダンな吟醸酒。青い空と海をイメージした爽やかな味わい。
+                                </p>
+                                <div class="sake-specs">
+                                    <span class="spec-item">
+                                        <span class="spec-label">精米歩合</span>
+                                        <span class="spec-value">55%</span>
+                                    </span>
+                                    <span class="spec-item">
+                                        <span class="spec-label">アルコール度</span>
+                                        <span class="spec-value">15%</span>
+                                    </span>
+                                </div>
+                                <div class="sake-tags">
+                                    <span class="sake-tag modern">モダン</span>
+                                    <span class="sake-tag fresh">爽やか</span>
+                                    <span class="sake-tag regional">土佐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="details-toggle" onclick="toggleSakeDetails('azure')">
+                            <span class="toggle-text">詳細を見る</span>
+                            <span class="toggle-icon">▼</span>
+                        </button>
+                        <div class="sake-details" id="azure-details">
+                            <div class="details-tabs">
+                                <button class="tab-btn active" data-tab="overview">概要</button>
+                                <button class="tab-btn" data-tab="brewing">製法</button>
+                                <button class="tab-btn" data-tab="tasting">味わい</button>
+                                <button class="tab-btn" data-tab="pairing">ペアリング</button>
+                            </div>
+                            <div class="details-content">
+                                <div class="tab-content active" data-tab="overview">
+                                    <h4>商品概要</h4>
+                                    <p><strong>蔵元:</strong> 土佐鶴酒造（高知県）</p>
+                                    <p><strong>コンセプト:</strong> 青い空と海をイメージ</p>
+                                    <p><strong>特徴:</strong> モダンで爽やかな味わい</p>
+                                </div>
+                                <div class="tab-content" data-tab="brewing">
+                                    <h4>製法・原料</h4>
+                                    <p><strong>精米歩合:</strong> 55%</p>
+                                    <p><strong>製法:</strong> 吟醸造り</p>
+                                    <p><strong>特徴:</strong> 現代的な味わい設計</p>
+                                </div>
+                                <div class="tab-content" data-tab="tasting">
+                                    <h4>味わい・香り</h4>
+                                    <p><strong>香り:</strong> 爽やかで上品な吟醸香</p>
+                                    <p><strong>味わい:</strong> 軽やかでバランスの良い味</p>
+                                    <p><strong>特徴:</strong> 青空のような清々しさ</p>
+                                </div>
+                                <div class="tab-content" data-tab="pairing">
+                                    <h4>おすすめペアリング</h4>
+                                    <p><strong>和食:</strong> 海鮮料理、夏野菜</p>
+                                    <p><strong>温度:</strong> 冷酒がおすすめ</p>
+                                    <p><strong>季節:</strong> 夏に特におすすめ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 李白 純米吟醸 Wandering Poet -->
+                    <article class="sake-card poetic" data-category="junmai-ginjo" data-sake-id="rihaku">
+                        <div class="sake-card-inner">
+                            <div class="sake-image">
+                                <img src="李白（りはく） 純米吟醸 "Wandering Poet"（李白酒造・島根）.jpg" alt="李白 純米吟醸 Wandering Poet">
+                                <div class="sake-badge poetic">詩的</div>
+                                <div class="sake-rating">
+                                    <span class="stars">★★★★☆</span>
+                                </div>
+                            </div>
+                            <div class="sake-content">
+                                <div class="sake-header">
+                                    <h3 class="sake-name">李白（りはく） 純米吟醸 "Wandering Poet"</h3>
+                                    <span class="sake-type">純米吟醸</span>
+                                </div>
+                                <p class="sake-description">
+                                    詩人李白を冠した島根の銘酒。詩的な美しさを持つ純米吟醸。
+                                </p>
+                                <div class="sake-specs">
+                                    <span class="spec-item">
+                                        <span class="spec-label">精米歩合</span>
+                                        <span class="spec-value">55%</span>
+                                    </span>
+                                    <span class="spec-item">
+                                        <span class="spec-label">アルコール度</span>
+                                        <span class="spec-value">15%</span>
+                                    </span>
+                                </div>
+                                <div class="sake-tags">
+                                    <span class="sake-tag poetic">詩的</span>
+                                    <span class="sake-tag elegant">上品</span>
+                                    <span class="sake-tag regional">島根</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="details-toggle" onclick="toggleSakeDetails('rihaku')">
+                            <span class="toggle-text">詳細を見る</span>
+                            <span class="toggle-icon">▼</span>
+                        </button>
+                        <div class="sake-details" id="rihaku-details">
+                            <div class="details-tabs">
+                                <button class="tab-btn active" data-tab="overview">概要</button>
+                                <button class="tab-btn" data-tab="brewing">製法</button>
+                                <button class="tab-btn" data-tab="tasting">味わい</button>
+                                <button class="tab-btn" data-tab="pairing">ペアリング</button>
+                            </div>
+                            <div class="details-content">
+                                <div class="tab-content active" data-tab="overview">
+                                    <h4>商品概要</h4>
+                                    <p><strong>蔵元:</strong> 李白酒造（島根県）</p>
+                                    <p><strong>由来:</strong> 詩人李白から命名</p>
+                                    <p><strong>特徴:</strong> 詩的な美しさを持つ酒</p>
+                                </div>
+                                <div class="tab-content" data-tab="brewing">
+                                    <h4>製法・原料</h4>
+                                    <p><strong>精米歩合:</strong> 55%</p>
+                                    <p><strong>製法:</strong> 純米吟醸造り</p>
+                                    <p><strong>特徴:</strong> 島根の清らかな水使用</p>
+                                </div>
+                                <div class="tab-content" data-tab="tasting">
+                                    <h4>味わい・香り</h4>
+                                    <p><strong>香り:</strong> 上品で詩的な香り</p>
+                                    <p><strong>味わい:</strong> 美しくバランスの取れた味</p>
+                                    <p><strong>特徴:</strong> 詩人の名にふさわしい品格</p>
+                                </div>
+                                <div class="tab-content" data-tab="pairing">
+                                    <h4>おすすめペアリング</h4>
+                                    <p><strong>和食:</strong> 懐石料理、上品な料理</p>
+                                    <p><strong>温度:</strong> 冷酒～常温</p>
+                                    <p><strong>雰囲気:</strong> 静かに味わいたい時に</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="lineup-cta">
+            <div class="container">
+                <h2>100種類の日本酒をご体験ください</h2>
+                <p>唎酒師®のガイド付きで、あなたにぴったりの一杯を見つけましょう</p>
+                <a href="index.html#contact" class="cta-button">
+                    <span>体験予約・お問い合わせ</span>
+                    <span class="cta-icon">🍶</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 yodobloom SAKE. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Google Translate (Hidden) -->
+    <div id="google_translate_element" style="display: none;"></div>
+    
+    <!-- Scripts -->
+    <script src="js/global-translate.js"></script>
+    <script src="js/enhanced-chatbot.js"></script>
+    <script src="js/sake-knowledge-chatbot.js"></script>
+    <script src="js/sake-lineup-v2.js"></script>
+</body>
+</html>
