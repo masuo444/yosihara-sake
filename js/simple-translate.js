@@ -1,6 +1,6 @@
 /**
- * シンプルな英語翻訳機能
- * Google翻訳APIを直接利用
+ * 強制的なGoogle翻訳実装
+ * 確実に動作する方法を使用
  */
 
 // 翻訳状態を管理
@@ -8,7 +8,7 @@ let isTranslated = false;
 
 // 英語翻訳の切り替え
 function toggleEnglishTranslation() {
-    console.log('Toggle translation clicked, current state:', isTranslated);
+    console.log('Translation button clicked');
     
     const btn = document.getElementById('englishTranslateBtn');
     
@@ -18,30 +18,33 @@ function toggleEnglishTranslation() {
         btn.classList.remove('active');
         btn.innerHTML = '<span class="flag-icon">🇺🇸</span><span class="lang-text">EN</span>';
         isTranslated = false;
+        localStorage.setItem('translate_state', 'ja');
     } else {
         // 英語に翻訳
         translateToEnglish();
         btn.classList.add('active');
         btn.innerHTML = '<span class="flag-icon">🇯🇵</span><span class="lang-text">JA</span>';
         isTranslated = true;
+        localStorage.setItem('translate_state', 'en');
     }
 }
 
-// 英語に翻訳
+// 英語に翻訳（複数の方法を試行）
 function translateToEnglish() {
-    console.log('Translating to English...');
+    console.log('Starting English translation...');
     
-    // URLに翻訳パラメータを追加
-    const currentUrl = window.location.href.split('#')[0];
-    const newUrl = currentUrl + '#googtrans(ja|en)';
+    // 方法1: Google翻訳URLリダイレクト
+    const currentUrl = window.location.href.split('#')[0].split('?')[0];
+    const translateUrl = `https://translate.google.com/translate?sl=ja&tl=en&u=${encodeURIComponent(currentUrl)}`;
     
-    // Google翻訳を強制実行
-    window.location.href = newUrl;
+    // 新しいタブで開く
+    window.open(translateUrl, '_blank');
     
-    // ページを再読み込みして翻訳を適用
+    // 方法2: 現在のページにGoogle翻訳パラメータを適用
     setTimeout(() => {
+        window.location.href = currentUrl + '#googtrans(ja|en)';
         window.location.reload();
-    }, 100);
+    }, 1000);
 }
 
 // 元の言語に戻す
@@ -49,13 +52,9 @@ function restoreOriginalLanguage() {
     console.log('Restoring to Japanese...');
     
     // URLから翻訳パラメータを削除
-    const currentUrl = window.location.href.split('#')[0];
+    const currentUrl = window.location.href.split('#')[0].split('?')[0];
     window.location.href = currentUrl;
-    
-    // ページを再読み込み
-    setTimeout(() => {
-        window.location.reload();
-    }, 100);
+    window.location.reload();
 }
 
 // ページ読み込み時に翻訳状態をチェック
