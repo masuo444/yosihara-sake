@@ -142,10 +142,41 @@ function updateLanguageUI(langCode) {
     }
 }
 
+// 英語翻訳ボタンの制御
+window.toggleEnglishTranslation = function() {
+    const btn = document.getElementById('englishTranslateBtn');
+    const isActive = btn.classList.contains('active');
+    
+    // Google翻訳の隠されたセレクトボックスを探す
+    const googleSelect = document.querySelector('.goog-te-combo');
+    
+    if (!googleSelect) {
+        // Google翻訳がまだ読み込まれていない場合は少し待つ
+        setTimeout(window.toggleEnglishTranslation, 500);
+        return;
+    }
+    
+    if (isActive) {
+        // 日本語（元の言語）に戻す
+        googleSelect.value = '';
+        googleSelect.dispatchEvent(new Event('change'));
+        btn.classList.remove('active');
+        btn.innerHTML = '<span class="flag-icon">🇺🇸</span><span class="lang-text">EN</span>';
+    } else {
+        // 英語に翻訳
+        googleSelect.value = 'en';
+        googleSelect.dispatchEvent(new Event('change'));
+        btn.classList.add('active');
+        btn.innerHTML = '<span class="flag-icon">🇯🇵</span><span class="lang-text">JA</span>';
+    }
+};
+
 // 既存のtoggleLanguageMenu機能を維持
 window.googleTranslate = window.googleTranslate || {};
 window.googleTranslate.toggleLanguageMenu = function() {
     const dropdown = document.getElementById('languageDropdown');
+    if (!dropdown) return;
+    
     const isVisible = dropdown.style.display !== 'none';
     
     if (isVisible) {
@@ -191,9 +222,41 @@ function addTranslateStateClass() {
     });
 }
 
+// 翻訳状態の監視と英語ボタンの同期
+function monitorTranslationState() {
+    const observer = new MutationObserver(() => {
+        const html = document.documentElement;
+        const btn = document.getElementById('englishTranslateBtn');
+        
+        if (!btn) return;
+        
+        // 翻訳されている状態を検出
+        if (html.classList.contains('translated-ltr')) {
+            // 現在の翻訳言語を確認
+            const googleSelect = document.querySelector('.goog-te-combo');
+            if (googleSelect && googleSelect.value === 'en') {
+                btn.classList.add('active');
+                btn.innerHTML = '<span class="flag-icon">🇯🇵</span><span class="lang-text">JA</span>';
+            }
+            document.body.classList.add('is-translated');
+        } else {
+            // 翻訳が解除された状態
+            btn.classList.remove('active');
+            btn.innerHTML = '<span class="flag-icon">🇺🇸</span><span class="lang-text">EN</span>';
+            document.body.classList.remove('is-translated');
+        }
+    });
+    
+    observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class']
+    });
+}
+
 // 初期化
 document.addEventListener('DOMContentLoaded', () => {
     addTranslateStateClass();
+    monitorTranslationState();
 });
 
 // Google翻訳スクリプトを動的に読み込み

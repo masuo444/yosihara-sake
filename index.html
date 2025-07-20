@@ -45,7 +45,11 @@
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
             <a href="#" class="logo">吉源酒造場</a>
             <div class="header-translate-container">
-                <div id="google_translate_element_header"></div>
+                <button id="englishTranslateBtn" class="english-translate-btn" onclick="toggleEnglishTranslation()">
+                    <span class="flag-icon">🇺🇸</span>
+                    <span class="lang-text">EN</span>
+                </button>
+                <div id="google_translate_element_header" style="display: none;"></div>
             </div>
             <nav class="nav" id="mainNav">
                 <a href="#about" class="nav-link">蔵元について</a>
