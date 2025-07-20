@@ -141,7 +141,7 @@ async function translateText(text, targetLang) {
             '吉源酒造場': 'Yoshigen Sake Brewery',
             '寿齢': 'Jurei',
             '長寿を祝う酒': 'Sake to Celebrate Longevity',
-            '蔵元について': 'About Our Brewery',
+            '蔵元について': 'About Yoshigen Brewery',
             '商品一覧': 'Product List',
             '歴史': 'History',
             'アクセス': 'Access',
